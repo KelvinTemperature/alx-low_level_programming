@@ -23,13 +23,13 @@ int main(void)
 	{
 		printf("Last digit of %d is %i and is greater than 5\n", n, m);
 	}
-	else if (m < 6)
+	else if (m == )
 	{
-		printf("Last digit of %d is %i and is less than 6 and not 0\n", n, m);
+		printf("Last digit of %d is %i and is 0\n", n, m);
 	}
-	else if (m == 0)
+	else if (m > 6)
 	{
-		printf("Last digit of %d is 0 and is 0\n", n, m);
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, m);
 	}
 	return (0);
 }
