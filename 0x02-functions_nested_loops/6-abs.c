@@ -5,7 +5,7 @@
  *
  * @n: the number to be evaluated
  *
- * Retur zero (0)
+ * Return: zero (0)
  */
 
 int _abs(int n)
@@ -19,6 +19,6 @@ int _abs(int n)
 		n = n / -1;
 		_putchar(n);
 	}
-	return (0);
+	return (n);
 
 }
