@@ -8,6 +8,8 @@
 
 int main(void)
 {
+	int a, b, c;
+
 	a = 972;
 	b = -98;
 	c = 0;
