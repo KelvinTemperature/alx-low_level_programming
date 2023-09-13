@@ -8,18 +8,18 @@
 
 int main(void)
 {
-	long int n1, n2, next;
+	double n1, n2, next;
 	int n;
 
 	n1 = 1;
 	n2 = 2;
 
-	printf("%ld, %ld, ", n1, n2);
+	printf("%d, %d", n1, n2);
 
 	for (n = 0; n < 96; n++)
 	{
 		next = n1 + n2;
-		printf("%ld, ", next);
+		printf(", %d", next);
 		n1 = n2;
 		n2 = next;
 	}
