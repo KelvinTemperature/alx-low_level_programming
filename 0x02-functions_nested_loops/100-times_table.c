@@ -27,6 +27,8 @@ void print_times_table(int n)
 				op = a * b;
 				if (op <= 9)
 				{
+					_putchar(32);
+					_putchar(32);
 					_putchar(op + 48);
 				}
 				else if (op >= 100)
@@ -37,6 +39,7 @@ void print_times_table(int n)
 				}
 				else
 				{
+					_putchar(32);
 					_putchar((op / 10) + 48);
 					_putchar((op % 10) + 48);
 				}
