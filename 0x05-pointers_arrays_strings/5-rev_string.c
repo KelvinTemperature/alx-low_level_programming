@@ -11,5 +11,7 @@ void rev_string(char *s)
 	int j = sizeof(s);
 
 	for (j = j + 1; j >= 0; j--)
-		_putchar(s[j]);
+		if (j < 9)
+		_putchar(s[j / 10]);
+	_putchar(s[j % 10]);
 }
