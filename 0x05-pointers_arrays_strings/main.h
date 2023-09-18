@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 
-int _putchar.c(char c);
+int _putchar(char c);
 void reset_to98(int *n);
 
 #endif
