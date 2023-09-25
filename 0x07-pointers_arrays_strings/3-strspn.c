@@ -9,11 +9,21 @@
 
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int length = 0;
+	unsigned int i, j, bool;
 
-	while (s[length] != '\0' && strchr(accept, s[length]) != NULL)
+	for (i = 0; *(s + i) != '\0'; i++)
 	{
-		length++;
+		bool = 1;
+		for (j = 0; *(accept + j) != '\0'; j++)
+		{
+			if (*(s + i) == *(accept + j))
+			{
+				bool = 0;
+				break;
+			}
+		}
+		if (bool == 1)
+			break;
 	}
-	return (length);
+	return (i);
 }
