@@ -14,7 +14,7 @@ int main(int argc, char **argv)
 
 	if (argc > 1)
 	{
-	for (i = 0; i < argc; i++)
+	for (i = 1; i < argc; i++)
 	{
 		if ((*argv[i] >= 58) && (*argv[i] <= 126))
 		{
