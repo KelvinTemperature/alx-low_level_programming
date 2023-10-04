@@ -2,7 +2,7 @@
 #include <stdlib.h>
 
 /**
- * fre_grid - free allocated grid bytes
+ * free_grid - free allocated grid bytes
  * @grid: pointed grid
  * @height: each array
  * Return: Nothing
