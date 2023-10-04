@@ -5,7 +5,7 @@
  * alloc_grid - allocate memory for a 2-dimension array
  * @width: number of element in the each array
  * @height: number if arrays
- * Returns: pointer to a 2-dimension array
+ * Return: pointer to a 2-dimension array
  */
 
 int **alloc_grid(int width, int height)
@@ -16,14 +16,21 @@ int **alloc_grid(int width, int height)
 	if (width == 0 || height == 0)
 		return (NULL);
 
-	arr =(int**)malloc(sizeof(int*) * width);
+	arr = (int **)malloc(sizeof(int *) * width);
 
 	for (i = 0; i < width; i++)
 	{
-		arr[i] = (int*)malloc(height * sizeof(int));
+		arr[i] = (int *)malloc(height * sizeof(int));
 	}
 	if (arr == 0)
+	{
 		return (NULL);
+	}
+	if (arr[i] == 0)
+	{
+		free(arr);
+		return (NULL);
+	}
 
 	for (i = 0; i < width; i++)
 	{
