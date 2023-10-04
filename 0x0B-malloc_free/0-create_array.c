@@ -17,7 +17,7 @@ char *create_array(unsigned int size, char c)
 	s = malloc(size * sizeof(char));
 	if (size == 0)
 	{
-		fprintf(stderr, "Not enough memory left\n");
+		exit(EXIT_FAILURE);
 		return (NULL);
 	}
 
