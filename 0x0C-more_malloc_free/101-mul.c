@@ -1,6 +1,7 @@
 #include "main.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 
 /**
  * main - entry function that collects argument
@@ -12,8 +13,8 @@
 int main(int argc, char **argv)
 {
 	int result;
-	int num1 = atoi(argv[0]);
-	int num2 = atoi(argv[1]);
+	int num1 = atoi(argv[1]);
+	int num2 = atoi(argv[2]);
 
 	if (argc < 3 || argc > 3)
 	{
