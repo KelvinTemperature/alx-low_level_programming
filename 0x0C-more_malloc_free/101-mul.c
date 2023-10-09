@@ -1,8 +1,8 @@
 #include "main.h"
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
-#include <string.h>
+
 /**
  * _is_zero - determines if any number is zero
  * @argv: argument vector.
@@ -121,6 +121,6 @@ int main(int argc, char *argv[])
 			addl = add / 10, nout[k] = (add % 10) + '0';
 		}
 	}
-	printf("%s\n", nout);
+	printf("%s\n", nout), free(nout);
 	return (0);
 }
