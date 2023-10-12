@@ -25,7 +25,7 @@ int main(int argc, char **argv)
 	}
 	if (get_op_func(p) == NULL || p[1] != '\0')
 	{
-		printf("Erro\n");
+		printf("Error\n");
 		exit(99);
 	}
 	if ((*p == '/' && num2 == 0) || (*p == '%' && num2 == 0))
