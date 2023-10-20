@@ -32,8 +32,8 @@ list_t *add_node_end(list_t **head, const char *str)
 		existNode = *head;
 		while (existNode->next != NULL)
 			existNode = existNode->next;
+		existNode->next = endNode;
 	}
-	existNode->next = endNode;
 
 	return (endNode);
 }
