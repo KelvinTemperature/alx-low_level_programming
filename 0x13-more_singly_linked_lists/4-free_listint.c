@@ -1,0 +1,19 @@
+#include "lists.h"
+
+/**
+ * free_listint - frees a list
+ * @head: head of list
+ */
+
+void free_listint(listint_t *head)
+{
+	listint_t *temp_node, *temp;
+
+	temp_node = head;
+	while (temp_node != NULL)
+	{
+		temp = temp_node->next;
+		free(temp_node);
+		temp_node = temp;
+	}
+}
