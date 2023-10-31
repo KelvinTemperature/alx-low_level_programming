@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 
 	file_des_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (file_des_to == -1)
-		handle_exit_with_error(99, "Error: Can't read from file %s\n", file_to);
+		handle_exit_with_error(99, "Error: Can't write from file %s\n", file_to);
 
 	read_bytes = BUF_SIZE;
 	while (read_bytes == BUF_SIZE)
