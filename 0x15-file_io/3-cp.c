@@ -40,7 +40,7 @@ int main(int argc, char **argv)
 	if (file_des_from == -1)
 		handle_exit_with_error(98, "Error: Can't read from file %s\n", file_from);
 
-	file_des_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	file_des_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (file_des_to == -1)
 		handle_exit_with_error(99, "Error: Can't read from file %s\n", file_to);
 
@@ -48,7 +48,7 @@ int main(int argc, char **argv)
 	{
 		write_bytes = write(file_des_to, buffer, read_bytes);
 		if (write_bytes != read_bytes)
-			handle_exit_with_error(99, "Error: Can't read from file %s\n", file_to);
+			handle_exit_with_error(99, "Error: Can't write to file %s\n", file_to);
 	}
 	if (read_bytes == -1)
 	{
