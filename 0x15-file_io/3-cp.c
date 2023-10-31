@@ -44,15 +44,15 @@ int main(int argc, char **argv)
 	if (file_des_to == -1)
 		handle_exit_with_error(99, "Error: Can't read from file %s\n", file_to);
 
-	while ((read_bytes = read(file_des_from, buffer, BUF_SIZE)) > 0)
+	read_bytes = BUF_SIZE;
+	while (read_bytes == BUF_SIZE)
 	{
+		read_bytes = read(file_des_from, buffer, BUF_SIZE);
+		if (read_bytes == -1)
+			handle_exit_with_error(98, "Error: Can't read from file %s\n", file_from);
 		write_bytes = write(file_des_to, buffer, read_bytes);
 		if (write_bytes != read_bytes)
 			handle_exit_with_error(99, "Error: Can't write to file %s\n", file_to);
-	}
-	if (read_bytes == -1)
-	{
-		handle_exit_with_error(98, "Error: Can't read from file %s\n", file_from);
 	}
 
 	if (close(file_des_from) == -1)
