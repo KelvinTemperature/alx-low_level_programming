@@ -51,7 +51,7 @@ int main(int argc, char **argv)
 		if (read_bytes == -1)
 			handle_exit_with_error(98, "Error: Can't read from file %s\n", file_from);
 		write_bytes = write(file_des_to, buffer, read_bytes);
-		if (write_bytes != read_bytes)
+		if (write_bytes == -1)
 			handle_exit_with_error(99, "Error: Can't write to file %s\n", file_to);
 	}
 
