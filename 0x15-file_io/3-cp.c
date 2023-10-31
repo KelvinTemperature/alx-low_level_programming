@@ -28,7 +28,11 @@ int main(int argc, char **argv)
 	char buffer[BUF_SIZE];
 
 	if (argc != 3)
-		handle_exit_with_error(97, "Usage: cp file_from file_to\n", argv[1]);
+	{
+		dprintf(STDERR_FILENO,"%s\n", "Usage: cp file_from file_to");
+		exit(97);
+	}
+
 	file_from = argv[1];
 	file_to = argv[2];
 
