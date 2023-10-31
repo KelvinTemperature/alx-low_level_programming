@@ -42,7 +42,7 @@ int main(int argc, char **argv)
 
 	file_des_to = open(file_to, O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0664);
 	if (file_des_to == -1)
-		handle_exit_with_error(99, "Error: Can't write to file %s\n", file_to);
+		handle_exit_with_error(99, "Error: Can't write to %s\n", file_to);
 
 	read_bytes = BUF_SIZE;
 	while (read_bytes == BUF_SIZE)
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
 			handle_exit_with_error(98, "Error: Can't read from file %s\n", file_from);
 		write_bytes = write(file_des_to, buffer, read_bytes);
 		if (write_bytes == -1)
-			handle_exit_with_error(99, "Error: Can't write to file %s\n", file_to);
+			handle_exit_with_error(99, "Error: Can't write to %s\n", file_to);
 	}
 
 	if (close(file_des_from) == -1)
