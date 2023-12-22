@@ -3,6 +3,7 @@
 /**
  * key_index - generates the index at which the key/value is store in ht
  * @size: size of ht
+ * @key: key
  * Return: index
  */
 
