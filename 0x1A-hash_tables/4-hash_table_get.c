@@ -13,7 +13,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	hash_node_t *node;
 	char *val;
 
-	if (ht == NULL || key == NULL)
+	if (ht == NULL || key == NULL || *key == '\0')
 		return (NULL);
 
 	indx = key_index((const unsigned char *)key, ht->size);
@@ -22,10 +22,12 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 
 	if (node == NULL)
 		val = NULL;
-	else
+	while (node != NULL)
 	{
 		if (strcmp(node->key, key) == 0)
 			val = node->value;
+
+		node = node->next;
 	}
 
 	return (val);
