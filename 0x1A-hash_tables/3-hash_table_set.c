@@ -22,12 +22,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	point->value = strdup(value);
 	point->next = NULL;
 
-	if (ht == NULL || key == NULL || value == NULL)
+	if (ht == NULL || key == NULL || *key == '\0' || value == NULL)
+	{
+		free(point);
 		return (0);
+	}
 
 	index = key_index((const unsigned char *)key, ht->size);
 	if (ht->array == NULL)
+	{
+		free(point);
 		return (0);
+	}
 
 	tmp = ht->array[index];
 
