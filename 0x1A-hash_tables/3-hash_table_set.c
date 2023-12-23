@@ -17,7 +17,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	point = malloc(sizeof(hash_node_t));
 	if (point == NULL)
 		return (0);
-
 	point->key = strdup(key);
 	point->value = strdup(value);
 	point->next = NULL;
@@ -36,7 +35,6 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	}
 
 	tmp = ht->array[index];
-
 	if (ht->array[index] == NULL)
 		ht->array[index] = point;
 	else if (strcmp(key, tmp->key) == 0)
