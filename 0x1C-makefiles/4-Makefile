@@ -20,4 +20,4 @@ fclean:
 	${RM} *~ ${NAME} ${OBJ}
 
 re:
-	${RM} ${OBJ} ${OBJ}
+	make -o ${OBJ}
