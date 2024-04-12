@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
 #include "search_algos.h"
 
 /**
@@ -22,7 +25,7 @@ listint_t *jump_list(listint_t *list, size_t size, int value)
 		return (NULL);
 
 	step = 0;
-	step_size = sqrt(size);
+	step_size = (size_t)sqrt(size);
 	for (node = jump = list; jump->index + 1 < size && jump->n < value;)
 	{
 		node = jump;
